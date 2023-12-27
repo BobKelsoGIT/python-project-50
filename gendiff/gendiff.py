@@ -1,4 +1,3 @@
-from gendiff.cli import parse_args
 import json
 
 
@@ -24,14 +23,3 @@ def generate_diff(file_path1, file_path2):
             diff_lines.append(f'  + {key}: {data2[key]}')
 
     return '{\n' + '\n'.join(diff_lines) + '\n}'
-
-
-def main():
-    args = parse_args()
-    data1 = args.first_file
-    data2 = args.second_file
-    print(generate_diff(data1, data2))
-
-
-if __name__ == '__main__':
-    main()
