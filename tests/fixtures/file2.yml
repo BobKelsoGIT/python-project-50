@@ -1,0 +1,4 @@
+timeout: 20
+verbose: true
+proxy: 123.234.53.23
+host: hexlet.io
