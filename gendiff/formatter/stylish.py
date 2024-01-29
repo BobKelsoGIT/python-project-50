@@ -21,7 +21,7 @@ def to_str(value, indent=2):
     return f"{value}"
 
 
-def stylish_output(diff, indent=2):
+def make_stylish(diff, indent=2):
     result = []
     spaces = INDENT_SYMBOL * int(indent)
     for item in diff:
@@ -41,7 +41,7 @@ def stylish_output(diff, indent=2):
             result.append(f"{spaces}{REMOVED_SYMBOL}{name}: {old_value}\n"
                           f"{spaces}{ADDED_SYMBOL}{name}: {new_value}")
         elif status == 'nested':
-            children = stylish_output(item.get("children"), indent + 4)
+            children = make_stylish(item.get("children"), indent + 4)
             result.append(f"{spaces}{UNCHANGED_SYMBOL}{name}: {children}")
     styled = '\n'.join(result)
     ending = INDENT_SYMBOL * (indent - 2)

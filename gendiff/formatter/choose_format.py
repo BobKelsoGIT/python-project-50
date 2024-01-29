@@ -1,8 +1,8 @@
-from gendiff.formatter.stylish import stylish_output
+from gendiff.formatter.stylish import make_stylish
 
 
 def formatted_output(diff, style='stylish'):
     if style == 'stylish':
-        return stylish_output(diff)
+        return make_stylish(diff)
     else:
         raise ValueError("Unsupported format")
