@@ -11,11 +11,11 @@ def to_str(value, indent=2):
         return str(value).lower()
     if isinstance(value, dict):
         spaces = INDENT_SYMBOL * (indent + 4)
-        lines = []
+        result = []
         for key, inner_value in value.items():
             formatted_value = to_str(inner_value, indent + 4)
-            lines.append(f"{spaces}{UNCHANGED_SYMBOL}{key}: {formatted_value}")
-        formatted_string = '\n'.join(lines)
+            result.append(f"{spaces}{UNCHANGED_SYMBOL}{key}: {formatted_value}")
+        formatted_string = '\n'.join(result)
         end_indent = INDENT_SYMBOL * (indent + 2)
         return f"{{\n{formatted_string}\n{end_indent}}}"
     return f"{value}"
@@ -25,8 +25,8 @@ def make_stylish(diff, indent=2):
     result = []
     spaces = INDENT_SYMBOL * int(indent)
     for item in diff:
-        name = item['name']
-        status = item['status']
+        name = item.get('name')
+        status = item.get('status')
         old_value = to_str(item.get("old_value"), indent)
         new_value = to_str(item.get("new_value"), indent)
 
