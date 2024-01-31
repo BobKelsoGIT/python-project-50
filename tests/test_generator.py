@@ -3,25 +3,6 @@ import pytest
 from gendiff.generator import generate_diff_list, nested
 
 
-def test_nested():
-    old = {'key': 'error',
-           'number': 5}
-    new = {'add': 'poncho',
-           'key': 'successfully',
-           'number': 5}
-    result = nested('nested_key', old, new)
-
-    assert result == {
-        'name': 'nested_key',
-        'status': 'nested',
-        'children': [
-            {'name': 'add', 'status': 'added', 'new_value': 'poncho'},
-            {'name': 'key', 'status': 'changed', 'old_value': 'error', 'new_value': 'successfully'},
-            {'name': 'number', 'status': 'unchanged', 'value': 5},
-        ]
-    }
-
-
 @pytest.fixture
 def data1():
     return {
@@ -61,3 +42,22 @@ def test_result():
 def test_generate_diff_list(data1, data2, test_result):
     result = generate_diff_list(data1, data2)
     assert result == test_result
+
+
+def test_nested():
+    old_value = {'key': 'error',
+                 'number': 5}
+    new_value = {'add': 'poncho',
+                 'key': 'successfully',
+                 'number': 5}
+    result = nested('nested_key', old_value, new_value)
+
+    assert result == {
+        'name': 'nested_key',
+        'status': 'nested',
+        'children': [
+            {'name': 'add', 'status': 'added', 'new_value': 'poncho'},
+            {'name': 'key', 'status': 'changed', 'old_value': 'error', 'new_value': 'successfully'},
+            {'name': 'number', 'status': 'unchanged', 'value': 5},
+        ]
+    }
