@@ -4,6 +4,9 @@ from gendiff.formatter.json import make_json
 
 
 def formatted_output(diff, style='stylish'):
+    """
+    Select a formatter depending on the user's specified preference
+    """
     if style == 'stylish':
         return make_stylish(diff)
     elif style == 'plain':

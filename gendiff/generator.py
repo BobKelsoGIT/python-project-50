@@ -1,4 +1,7 @@
-def nested(key, value1, value2):  # Generate children's keys difference
+def nested(key, value1, value2) -> dict:
+    """
+    Generate children's keys with names, statuses and values
+    """
     return {
         'name': key,
         'status': 'nested',
@@ -6,7 +9,10 @@ def nested(key, value1, value2):  # Generate children's keys difference
     }
 
 
-def generate_diff_list(data1, data2):  # Generate list of keys difference
+def generate_diff_list(data1, data2) -> list:
+    """
+    Generate list of keys with names, statuses and values
+    """
     union_keys = data1.keys() | data2.keys()
     added_keys = data2.keys() - data1.keys()
     deleted_keys = data1.keys() - data2.keys()

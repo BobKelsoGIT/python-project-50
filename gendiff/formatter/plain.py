@@ -2,7 +2,7 @@ SEPARATOR = '.'
 BEGINNING = 'Property '
 
 
-def to_str(value):
+def to_str(value) -> str:
     if value is None:
         return 'null'
     elif isinstance(value, bool):
@@ -13,7 +13,7 @@ def to_str(value):
         return str(value)
 
 
-def get_path_and_values(item, path=''):
+def get_path_and_values(item, path='') -> str:
     name = item.get('name')
     status = item.get('status')
     current_path = f'{path}{SEPARATOR}{name}' if path else f'{name}'
@@ -33,7 +33,7 @@ def get_path_and_values(item, path=''):
         return make_plain(child, current_path)
 
 
-def make_plain(diff, path=''):
+def make_plain(diff, path='') -> str:
     result = []
     for item in diff:
         formatted_item = get_path_and_values(item, path)

@@ -4,7 +4,7 @@ REMOVED_SYMBOL = '- '
 UNCHANGED_SYMBOL = '  '
 
 
-def to_str(value, indent=2):
+def to_str(value, indent=2) -> str:
     if value is None:
         return "null"
     if isinstance(value, bool):
@@ -21,7 +21,7 @@ def to_str(value, indent=2):
     return f"{value}"
 
 
-def make_stylish(diff, indent=2):
+def make_stylish(diff, indent=2) -> str:
     result = []
     spaces = INDENT_SYMBOL * int(indent)
     for item in diff:
