@@ -10,9 +10,9 @@
 
 <h3 align="center">It allows you to choose a convenient format from the following options:</h3>
 
-- [Stylish](#stylish)
-- [Plain](#plain)
-- [Json](#json)
+- [Stylish](#stylish) (Used by default if the format is not specified or specified as "-f stylish")
+- [Plain](#plain) (use "-f plain")
+- [Json](#json) (use "-f json")
 <hr>
 
 <table>
@@ -36,10 +36,12 @@
 <a name="stylish"><h3 align="center">Stylish output</h3></a>
 
 
-[![asciicast](https://asciinema.org/a/8TTwzBSBwyo1JE47AvmKo5KA3.svg)](https://asciinema.org/a/8TTwzBSBwyo1JE47AvmKo5KA3)
+[![asciicast](https://asciinema.org/a/dHN7Kg0XcBtPmWmd1xjwP45pG.svg)](https://asciinema.org/a/dHN7Kg0XcBtPmWmd1xjwP45pG)
 
 <a name="plain"><h3 align="center">Plain output</h3></a>
 
-[![asciicast](https://asciinema.org/a/aBTP8NyeSBrmb2sYqaNfydc15.svg)](https://asciinema.org/a/aBTP8NyeSBrmb2sYqaNfydc15)
+[![asciicast](https://asciinema.org/a/O36ebv9qnf0Ip9oqAMwN5cAiJ.svg)](https://asciinema.org/a/O36ebv9qnf0Ip9oqAMwN5cAiJ)
 
 <a name="json"><h3 align="center">Json output</h3></a>
+
+[![asciicast](https://asciinema.org/a/YcuaTXGUOJFlIs4Bgu1Vq6FzN.svg)](https://asciinema.org/a/YcuaTXGUOJFlIs4Bgu1Vq6FzN)
