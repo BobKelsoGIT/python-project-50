@@ -1,10 +1,9 @@
 import pytest
-
 from gendiff.generator import generate_diff_list, nested
 
 
 @pytest.fixture
-def data1():
+def initial_data():
     return {
         'first_level': {
             'second_level1': False,
@@ -14,7 +13,7 @@ def data1():
 
 
 @pytest.fixture
-def data2():
+def modified_data():
     return {
         'first_level': {
             'second_level1': True,
@@ -39,8 +38,8 @@ def test_result():
     ]
 
 
-def test_generate_diff_list(data1, data2, test_result):
-    result = generate_diff_list(data1, data2)
+def test_generate_diff_list(initial_data, modified_data, test_result):
+    result = generate_diff_list(initial_data, modified_data)
     assert result == test_result
 
 

@@ -14,7 +14,7 @@ def test_make_stylish():
         }
     ]
 
-    result = """{
+    expected_result = """{
     first_level: {
       - second_level1: false
       + second_level1: true
@@ -23,7 +23,7 @@ def test_make_stylish():
     }
 }"""
 
-    assert result == make_stylish(value)
+    assert expected_result == make_stylish(value)
 
 
 def test_to_str_true():
