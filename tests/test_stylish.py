@@ -1,59 +1,39 @@
+import json
 from gendiff.formatter.stylish import make_stylish, to_str
 
 
 def test_make_stylish():
-    value = [
-        {
-            'name': 'first_level',
-            'status': 'nested',
-            'children': [
-                {'name': 'second_level1', 'status': 'changed', 'old_value': False, 'new_value': True},
-                {'name': 'second_level2', 'status': 'unchanged', 'value': 'foo'},
-                {'name': 'second_level3', 'status': 'added', 'new_value': 'baz'},
-            ]
-        }
-    ]
+    diff = json.load(open('tests/fixtures/diff.json'))
 
     expected_result = """{
-    first_level: {
-      - second_level1: false
-      + second_level1: true
-        second_level2: foo
-      + second_level3: baz
+  + key1: value1
+  - key2: value2
+  - key3: value3
+  + key3: value3_updated
+    key4: value4
+    nested_key: {
+      + nested_key2: value2_nested
     }
 }"""
 
-    assert expected_result == make_stylish(value)
+    result = make_stylish(diff)
+    assert expected_result == result
 
 
-def test_to_str_true():
-    value = True
-    assert to_str(value) == 'true'
-
-
-def test_to_str_false():
-    value = False
-    assert to_str(value) == 'false'
-
-
-def test_to_str_none():
-    value = None
-    assert to_str(value) == 'null'
-
-
-def test_to_str_dict():
-    value = {
+def test_to_str():
+    assert to_str(None) == 'null'
+    assert to_str(True) == 'true'
+    assert to_str(False) == 'false'
+    assert to_str(42) == '42'
+    assert to_str('hello') == 'hello'
+    assert to_str({
         "host": "hexlet.io",
         "timeout": 50,
         "proxy": "123.234.53.22",
         "follow": False
-    }
-
-    expected_result = '''{
+    }) == '''{
         host: hexlet.io
         timeout: 50
         proxy: 123.234.53.22
         follow: false
     }'''
-
-    assert to_str(value) == expected_result
