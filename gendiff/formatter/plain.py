@@ -9,6 +9,8 @@ def to_str(value) -> str:
         return str(value).lower()
     elif isinstance(value, dict):
         return '[complex value]'
+    elif isinstance(value, str):
+        return f"'{value}'"
     else:
         return str(value)
 
