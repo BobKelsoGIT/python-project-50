@@ -22,12 +22,12 @@ def get_path_and_values(item, path='') -> str:
 
     if status == 'added':
         return (f"{BEGINNING}'{current_path}' was added "
-                f"with value: '{new_value}'")
+                f"with value: {new_value}")
     elif status == 'deleted':
         return f"{BEGINNING}'{current_path}' was removed"
     elif status == 'changed':
         return (f"{BEGINNING}'{current_path}' was updated. "
-                f"From '{old_value}' to '{new_value}'")
+                f"From {old_value} to {new_value}")
     elif status == 'nested':
         child = item.get('children')
         return make_plain(child, current_path)
