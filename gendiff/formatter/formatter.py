@@ -3,7 +3,7 @@ from gendiff.formatter.plain import make_plain
 from gendiff.formatter.json import make_json
 
 
-def formatted_output(diff, style='stylish'):
+def format_output(diff, style='stylish'):
     """
     Select a formatter depending on the user's specified preference
     """
