@@ -1,10 +1,13 @@
+
+
+<h2 align="center">Tool  for displaying differences between two JSON or YAML (YML) files</h2>
+<hr>
+
 [![Actions Status](https://github.com/BobKelsoGIT/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/BobKelsoGIT/python-project-50/actions)
 [![gendiff](https://github.com/BobKelsoGIT/python-project-50/actions/workflows/gendiff.yml/badge.svg)](https://github.com/BobKelsoGIT/python-project-50/actions/workflows/gendiff.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/b42057f8d3446129fd33/maintainability)](https://codeclimate.com/github/BobKelsoGIT/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b42057f8d3446129fd33/test_coverage)](https://codeclimate.com/github/BobKelsoGIT/python-project-50/test_coverage)
 
-<h2 align="center">Tool  for displaying differences between two JSON or YAML (YML) files</h2>
-<hr>
 <h3 align="center">It allows you to choose a convenient format from the following options:</h3>
 
 - [Stylish](#stylish)
@@ -22,7 +25,6 @@
         <td>
 
     git clone git@github.com:BobKelsoGIT/python-project-50.git
-    cd brain-games
     make install
     make build
     make package-install
