@@ -7,7 +7,7 @@ def to_str(value) -> str:
         return 'null'
     elif isinstance(value, bool):
         return str(value).lower()
-    elif isinstance(value, dict):
+    elif isinstance(value, (list, dict)):
         return '[complex value]'
     elif isinstance(value, str):
         return f"'{value}'"
