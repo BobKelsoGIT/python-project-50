@@ -3,16 +3,20 @@ BEGINNING = 'Property '
 
 
 def to_str(value) -> str:
+    result = None
+
     if value is None:
-        return 'null'
+        result = 'null'
     elif isinstance(value, bool):
-        return str(value).lower()
+        result = str(value).lower()
     elif isinstance(value, (list, dict)):
-        return '[complex value]'
+        result = '[complex value]'
     elif isinstance(value, str):
-        return f"'{value}'"
+        result = f"'{value}'"
     else:
-        return str(value)
+        result = str(value)
+
+    return result
 
 
 def get_path_and_values(item, path='') -> str:
